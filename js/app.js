@@ -1,5 +1,6 @@
 const wrapper = document.getElementById('wrapper');
 const img = document.querySelector('.card img');
+const loader = document.querySelector('.spinner')
 
 function createCard(user) {
     return`
@@ -21,13 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     .then(function (data) {
+        wrapper.style.display = 'block';
         data.length > 0 && data.forEach(user => {
             const card  = createCard(user);
             wrapper.innerHTML += card; 
         })
     })
 
-});
+    .catch(err=> {
+        wrapper.style.display = 'block'
+    })
+    .finally(function(){
+        loader.style.display = 'none';
+    })
 
-
-
+})
