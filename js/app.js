@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
       if (response.status === 200) {
         return response.json();
       } else {
-        throw new Error('Failed to fetch data');
+        throw new Error('Maʼlumotlarni olib boʻlmadi');
       }
     })
     .then(data => {
       if (data.length > 0) {
         wrapper.innerHTML = data.map(user => createCard(user)).join('');
       } else {
-        wrapper.innerHTML = '<p>No data available</p>';
+        wrapper.innerHTML = '<p>Maʼlumotlar mavjud emas</p>';
       }
     })
     .catch(err => {
