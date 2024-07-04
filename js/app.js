@@ -19,6 +19,7 @@ function createCard(user) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    alert("Sahifada 261 ta davlatning ma'lumotlari mavjud!");
   fetch('https://cars-pagination.onrender.com/all-countries')
     .then(response => {
       if (response.status === 200) {
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('click', function(event) {
+img.addEventListener('click', function(event) {
   const clickedElement = event.target;
 
   if (clickedElement.classList.contains('card-image')) {
