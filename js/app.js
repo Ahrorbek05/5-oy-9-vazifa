@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     .then(function (data) {
-        wrapper.style.display = 'block';
+        // wrapper.style.display = 'block';
         data.length > 0 && data.forEach(user => {
             const card  = createCard(user);
             wrapper.innerHTML += card; 
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     .catch(err=> {
+        console.log(err);
         wrapper.style.display = 'block'
     })
     .finally(function(){
